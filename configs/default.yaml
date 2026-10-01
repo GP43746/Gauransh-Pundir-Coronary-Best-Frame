@@ -1,0 +1,80 @@
+preprocessing:
+  normalization:
+    method: percentile
+    lower_percentile: 1.0
+    upper_percentile: 99.0
+
+vesselness:
+  method: sato
+  scales:
+    - 1.0
+    - 2.0
+    - 3.0
+  black_ridges: true
+
+vessel_mask:
+  threshold_method: percentile
+  threshold_percentile: 90.0
+  connectivity: 8
+  min_component_size: 50
+  morphology:
+    operation: closing
+    shape: disk
+    radius: 1
+
+vessel_features:
+  features:
+    - largest_component_fraction
+    - vessel_gradient_energy
+    - local_vessel_background_contrast
+
+  local_background:
+    dilation_radius: 3
+
+quality_features:
+  features:
+    - tenengrad
+    - local_rms_contrast
+
+  local_rms_contrast:
+    window_size: 15
+
+temporal_features:
+  features:
+    - sharpness_ratio_prev
+    - contrast_ratio_prev
+    - sharpness_peak_ratio
+    - vessel_gradient_peak_ratio
+    - vessel_contrast_peak_ratio
+
+normalization:
+  method: percentile_minmax
+  lower_percentile: 5.0
+  upper_percentile: 95.0
+  scope: candidate_window
+  direction: higher_is_better
+
+scoring:
+  branch_weights:
+    vessel: 0.40
+    quality: 0.40
+    temporal: 0.20
+
+  vessel_features:
+    - largest_component_fraction_norm
+    - vessel_gradient_energy_norm
+    - local_vessel_background_contrast_norm
+
+  quality_features:
+    - tenengrad_norm
+    - local_rms_contrast_norm
+
+  temporal_features:
+    - sharpness_ratio_prev_norm
+    - contrast_ratio_prev_norm
+    - sharpness_peak_ratio_norm
+    - vessel_gradient_peak_ratio_norm
+    - vessel_contrast_peak_ratio_norm
+
+output:
+  score_precision: 4

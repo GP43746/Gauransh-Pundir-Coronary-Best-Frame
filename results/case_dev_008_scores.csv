@@ -1,0 +1,17 @@
+case_id,frame_id,score,is_ground_truth,is_selected
+case_dev_008,17,0.51960262942948,False,False
+case_dev_008,18,0.7495616357710897,False,False
+case_dev_008,19,0.9249738200372113,False,False
+case_dev_008,20,0.7506299336251967,False,False
+case_dev_008,21,0.637798477334008,False,False
+case_dev_008,22,0.8167253542903252,False,False
+case_dev_008,23,0.7997256133866222,False,False
+case_dev_008,24,0.8938950448984682,False,False
+case_dev_008,25,0.9337340377555948,True,True
+case_dev_008,26,0.7680673640710163,False,False
+case_dev_008,27,0.22292410651332123,False,False
+case_dev_008,28,0.3156412433299549,False,False
+case_dev_008,29,0.18246115878233482,False,False
+case_dev_008,30,0.09159022758657479,False,False
+case_dev_008,31,0.11875179451282208,False,False
+case_dev_008,32,0.11224772034248805,False,False

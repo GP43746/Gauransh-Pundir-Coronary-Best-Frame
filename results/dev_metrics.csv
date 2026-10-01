@@ -1,0 +1,2 @@
+num_cases,total_candidate_frames,mean_ground_truth_rank,median_ground_truth_rank,mean_normalized_rank,top1_accuracy,top3_accuracy,top5_accuracy
+10,198,4.4,3.0,0.8093893946467476,0.3,0.6,0.7
