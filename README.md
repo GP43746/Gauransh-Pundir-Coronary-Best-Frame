@@ -108,7 +108,7 @@ Each frame is independently normalized using the 1st and 99th intensity percenti
 
 Let $I$ be the grayscale image, and let $p_1 = P_1(I)$ and $p_{99} = P_{99}(I)$.
 
-$$I_n = \operatorname{clip}\left( \frac{I - p_1}{p_{99} - p_1}, 0, 1 \right)$$
+$$I_n = \mathrm{clip}\left( \frac{I - p_1}{p_{99} - p_1}, 0, 1 \right)$$
 
 This reduces sensitivity to extreme intensity values while retaining the relative intensity structure within each frame. No learned preprocessing or neural representation is used.
 
@@ -232,7 +232,7 @@ Each feature is normalized independently within the candidate window using robus
 
 $$p_5 = P_5(x), \quad p_{95} = P_{95}(x)$$
 
-$$x_n = \operatorname{clip}\left( \frac{x - p_5}{p_{95} - p_5}, 0, 1 \right)$$
+$$x_n = \mathrm{clip}\left( \frac{x - p_5}{p_{95} - p_5}, 0, 1 \right)$$
 
 Higher values correspond to better quality across all normalized features.
 
@@ -249,7 +249,7 @@ $$S_V = \frac{F_{LC,n} + E_{G,n} + C_{VB,n}}{3}$$
 $$S_Q = \frac{T_n + C_{\text{RMS},n}}{2}$$
 
 ### 11.3 Temporal Score
-$$S_T = \operatorname{mean}\left( R_{S,P}, R_{C,P}, R_{S,\text{peak}}, R_{VG,\text{peak}}, R_{VC,\text{peak}} \right)$$
+$$S_T = \mathrm{mean}\left( R_{S,P}, R_{C,P}, R_{S,\text{peak}}, R_{VG,\text{peak}}, R_{VC,\text{peak}} \right)$$
 
 ---
 
